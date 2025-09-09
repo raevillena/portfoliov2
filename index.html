@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <title>Raymart O. Villena - Software Engineer | IoT & Full-Stack Developer | Researcher</title>
+    <meta name="description" content="Software Engineer, IoT & Full-Stack Developer, and Researcher specializing in innovative solutions that connect technology with real-world impact. Expert in React, Node.js, IoT systems, and AI/ML applications." />
+    <meta name="keywords" content="Software Engineer, IoT Developer, Full-Stack Developer, React, Node.js, TypeScript, IoT, AI/ML, Research, Philippines" />
+    <meta name="author" content="Raymart O. Villena" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Raymart O. Villena - Software Engineer | IoT & Full-Stack Developer" />
+    <meta property="og:description" content="Software Engineer, IoT & Full-Stack Developer, and Researcher specializing in innovative solutions that connect technology with real-world impact." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://raymartvillena.dev" />
+    <meta property="og:image" content="https://raymartvillena.dev/og-image.jpg" />
+    <meta property="og:site_name" content="Raymart Villena Portfolio" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Raymart O. Villena - Software Engineer | IoT & Full-Stack Developer" />
+    <meta name="twitter:description" content="Software Engineer, IoT & Full-Stack Developer, and Researcher specializing in innovative solutions that connect technology with real-world impact." />
+    <meta name="twitter:image" content="https://raymartvillena.dev/og-image.jpg" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://raymartvillena.dev" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="msapplication-TileColor" content="#3b82f6" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Prevent flash of unstyled content by applying theme immediately
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const shouldBeDark = savedTheme ? savedTheme === 'dark' : systemPrefersDark;
+        
+        if (shouldBeDark) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  </body>
+</html>
