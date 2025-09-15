@@ -1,17 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useDeveloperMode } from '../../contexts/DeveloperModeContext';
+import GlitchText from '../effects/GlitchText';
 import { personalInfo } from '../../data/portfolioData';
 
 const Hero: React.FC = () => {
+  const { isDeveloperMode } = useDeveloperMode();
+
   // Animation variants for different elements
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
+        delayChildren: 0.1,
+        staggerChildren: 0.1
       }
     }
   };
@@ -22,8 +26,7 @@ const Hero: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,
-        ease: "easeOut"
+        duration: 0.3
       }
     }
   };
@@ -34,8 +37,8 @@ const Hero: React.FC = () => {
       scale: 1,
       opacity: 1,
       transition: {
-        duration: 0.5,
-        delay: 0.8
+        duration: 0.3,
+        delay: 0.4
       }
     },
     hover: {
@@ -50,7 +53,11 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700">
+    <section className={`relative min-h-screen flex items-center justify-center overflow-hidden ${
+      isDeveloperMode 
+        ? 'bg-gradient-to-br from-gray-900 via-black to-gray-800 cyber-grid' 
+        : 'bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700'
+    }`}>
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated background shapes */}
@@ -100,48 +107,79 @@ const Hero: React.FC = () => {
           animate="visible"
           className="max-w-4xl mx-auto"
         >
-          {/* Profile Image Placeholder */}
+          {/* Profile Image */}
           <motion.div
             variants={itemVariants}
             className="mb-8 flex justify-center"
           >
             <div className="relative">
               <motion.div
-                className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-r from-primary-500 to-secondary-600 flex items-center justify-center text-white text-4xl sm:text-5xl font-bold shadow-2xl"
+                className={`w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden shadow-2xl ring-4 ${
+                  isDeveloperMode 
+                    ? 'ring-green-400 ring-opacity-50' 
+                    : 'ring-white dark:ring-gray-800'
+                }`}
                 animate={{
                   y: [0, -10, 0],
                 }}
                 transition={{
-                  duration: 3,
+                  duration: 2,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeOut"
                 }}
               >
-                {personalInfo.name.split(' ').map(n => n[0]).join('')}
+                <img
+                  src={personalInfo.profileImage}
+                  alt={`${personalInfo.name} - Professional Headshot`}
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                  decoding="async"
+                  onError={(e) => {
+                    // Fallback to initials if image fails to load
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      parent.innerHTML = `
+                        <div class="w-full h-full bg-gradient-to-r from-primary-500 to-secondary-600 flex items-center justify-center text-white text-4xl sm:text-5xl font-bold">
+                          ${personalInfo.name.split(' ').map(n => n[0]).join('')}
+                        </div>
+                      `;
+                    }
+                  }}
+                />
               </motion.div>
               {/* Floating elements around profile */}
               <motion.div
-                className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full"
+                className={`absolute -top-2 -right-2 w-6 h-6 rounded-full ${
+                  isDeveloperMode 
+                    ? 'bg-cyan-400' 
+                    : 'bg-yellow-400'
+                }`}
                 animate={{
                   scale: [1, 1.2, 1],
                   rotate: [0, 360],
                 }}
                 transition={{
-                  duration: 2,
+                  duration: 1.5,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeOut"
                 }}
               />
               <motion.div
-                className="absolute -bottom-2 -left-2 w-4 h-4 bg-green-400 rounded-full"
+                className={`absolute -bottom-2 -left-2 w-4 h-4 rounded-full ${
+                  isDeveloperMode 
+                    ? 'bg-green-400' 
+                    : 'bg-green-400'
+                }`}
                 animate={{
                   scale: [1, 1.3, 1],
                   rotate: [0, -360],
                 }}
                 transition={{
-                  duration: 2.5,
+                  duration: 2,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeOut"
                 }}
               />
             </div>
@@ -150,23 +188,41 @@ const Hero: React.FC = () => {
           {/* Name */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4"
+            className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 ${
+              isDeveloperMode 
+                ? 'text-white neon-glow' 
+                : 'text-gray-900 dark:text-white'
+            }`}
           >
-            <span className="gradient-text">{personalInfo.name}</span>
+            <GlitchText isActive={isDeveloperMode}>
+              <span className={isDeveloperMode ? 'text-white' : 'gradient-text'}>
+                {personalInfo.name}
+              </span>
+            </GlitchText>
           </motion.h1>
 
           {/* Role */}
           <motion.h2
             variants={itemVariants}
-            className="text-xl sm:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-6 font-medium"
+            className={`text-xl sm:text-2xl lg:text-3xl mb-6 font-medium ${
+              isDeveloperMode 
+                ? 'text-cyan-300' 
+                : 'text-gray-700 dark:text-gray-300'
+            }`}
           >
-            {personalInfo.title}
+            <GlitchText isActive={isDeveloperMode}>
+              {personalInfo.title}
+            </GlitchText>
           </motion.h2>
 
           {/* Bio */}
           <motion.p
             variants={itemVariants}
-            className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-4xl mx-auto leading-relaxed"
+            className={`text-lg sm:text-xl mb-8 max-w-4xl mx-auto leading-relaxed ${
+              isDeveloperMode 
+                ? 'text-gray-200' 
+                : 'text-gray-600 dark:text-gray-400'
+            }`}
           >
             {personalInfo.bio}
           </motion.p>
@@ -183,7 +239,11 @@ const Hero: React.FC = () => {
             >
               <Link
                 to="/projects"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className={`inline-flex items-center px-8 py-4 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group ${
+                  isDeveloperMode 
+                    ? 'dev-mode-btn neon-border hover-glow' 
+                    : 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white'
+                }`}
               >
                 <span>View Projects</span>
                 <motion.svg
@@ -206,7 +266,11 @@ const Hero: React.FC = () => {
             >
               <Link
                 to="/skills"
-                className="inline-flex items-center px-8 py-4 border-2 border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 font-semibold rounded-full hover:bg-primary-600 dark:hover:bg-primary-400 hover:text-white dark:hover:text-white transition-all duration-300"
+                className={`inline-flex items-center px-8 py-4 font-semibold rounded-full transition-all duration-300 ${
+                  isDeveloperMode 
+                    ? 'dev-mode-btn neon-border hover-glow' 
+                    : 'border-2 border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 hover:bg-primary-600 dark:hover:bg-primary-400 hover:text-white dark:hover:text-white'
+                }`}
               >
                 <span>View Skills</span>
                 <motion.svg
@@ -236,28 +300,40 @@ const Hero: React.FC = () => {
               ease: "easeInOut"
             }}
           >
-            <div className="flex flex-col items-center text-gray-500 dark:text-gray-400">
+            <div className={`flex flex-col items-center ${
+              isDeveloperMode 
+                ? 'text-gray-300' 
+                : 'text-gray-500 dark:text-gray-400'
+            }`}>
               <span className="text-sm mb-2">Scroll to explore</span>
               <motion.div
-                className="w-6 h-10 border-2 border-gray-400 dark:border-gray-500 rounded-full flex justify-center"
+                className={`w-6 h-10 border-2 rounded-full flex justify-center ${
+                  isDeveloperMode 
+                    ? 'border-gray-300' 
+                    : 'border-gray-400 dark:border-gray-500'
+                }`}
                 animate={{
                   y: [0, 5, 0],
                 }}
                 transition={{
                   duration: 1.5,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeOut"
                 }}
               >
                 <motion.div
-                  className="w-1 h-3 bg-gray-400 dark:bg-gray-500 rounded-full mt-2"
+                  className={`w-1 h-3 rounded-full mt-2 ${
+                    isDeveloperMode 
+                      ? 'bg-gray-300' 
+                      : 'bg-gray-400 dark:bg-gray-500'
+                  }`}
                   animate={{
                     opacity: [0, 1, 0],
                   }}
                   transition={{
                     duration: 1.5,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    ease: "easeOut"
                   }}
                 />
               </motion.div>

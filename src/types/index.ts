@@ -33,6 +33,7 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   imageUrl?: string;
+  images?: string[];
   status: 'completed' | 'in-progress' | 'planned';
 }
 
@@ -150,6 +151,20 @@ export interface Training {
 export interface ThemeContextType {
   isDark: boolean;
   toggleTheme: () => void;
+}
+
+// Developer mode context interface
+export interface DeveloperModeContextType {
+  isDeveloperMode: boolean;
+  toggleDeveloperMode: () => void;
+  showTerminal: boolean;
+  toggleTerminal: () => void;
+  showMatrix: boolean;
+  toggleMatrix: () => void;
+  showCodeRain: boolean;
+  toggleCodeRain: () => void;
+  showGlitch: boolean;
+  toggleGlitch: () => void;
 }
 
 // Navigation interface

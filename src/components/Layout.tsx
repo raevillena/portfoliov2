@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
-import DarkModeTest from './DarkModeTest';
+import { useDeveloperMode } from '../contexts/DeveloperModeContext';
+import MatrixRain from './effects/MatrixRain';
+import TerminalWindow from './effects/TerminalWindow';
+import FloatingParticles from './effects/FloatingParticles';
+import GlitchText from './effects/GlitchText';
+import MouseTrail from './effects/MouseTrail';
+import CodeRain from './effects/CodeRain';
+import DeveloperModePanel from './effects/DeveloperModePanel';
 import type { NavItem } from '../types/index';
 
 interface LayoutProps {
@@ -11,8 +18,17 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { isDark, toggleTheme } = useTheme();
+  const { 
+    isDeveloperMode, 
+    toggleDeveloperMode, 
+    showTerminal, 
+    toggleTerminal,
+    showCodeRain,
+    showMatrix
+  } = useDeveloperMode();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showDevPanel, setShowDevPanel] = useState(false);
   const location = useLocation();
 
   // Navigation items
@@ -82,7 +98,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <span className="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-600 rounded-lg flex items-center justify-center text-white font-bold">
                 R
               </span>
-              <span>Raymart Villena</span>
+              <GlitchText isActive={isDeveloperMode}>
+                Raymart Villena
+              </GlitchText>
             </Link>
 
             {/* Desktop Navigation */}
@@ -108,8 +126,44 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               ))}
             </div>
 
-            {/* Theme Toggle & Mobile Menu Button */}
+            {/* Theme Toggle, Developer Mode & Mobile Menu Button */}
             <div className="flex items-center space-x-4">
+              {/* Developer Mode Toggle */}
+              <button
+                onClick={toggleDeveloperMode}
+                className={`dev-mode-btn px-4 py-2 rounded-lg font-mono text-sm transition-all duration-300 ${
+                  isDeveloperMode ? 'active' : ''
+                }`}
+                aria-label="Toggle developer mode"
+                title={isDeveloperMode ? 'Exit developer mode' : 'Enter developer mode'}
+              >
+                {isDeveloperMode ? 'DEV ON' : 'DEV'}
+              </button>
+
+              {/* Terminal Toggle (only visible in developer mode) */}
+              {isDeveloperMode && (
+                <button
+                  onClick={toggleTerminal}
+                  className="dev-mode-btn px-3 py-2 rounded-lg font-mono text-sm transition-all duration-300"
+                  aria-label="Toggle terminal"
+                  title="Open terminal"
+                >
+                  {'>_'}
+                </button>
+              )}
+
+              {/* Developer Panel Toggle (only visible in developer mode) */}
+              {isDeveloperMode && (
+                <button
+                  onClick={() => setShowDevPanel(!showDevPanel)}
+                  className="dev-mode-btn px-3 py-2 rounded-lg font-mono text-sm transition-all duration-300"
+                  aria-label="Toggle developer panel"
+                  title="Open developer panel"
+                >
+                  {'⚙'}
+                </button>
+              )}
+
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
@@ -119,7 +173,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               >
                 <ThemeToggleIcon />
               </button>
-              
 
               {/* Mobile Menu Button */}
               <button
@@ -175,13 +228,42 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </AnimatePresence>
       </motion.header>
 
+      {/* Developer Mode Effects */}
+      {isDeveloperMode && (
+        <>
+          <MatrixRain isActive={showMatrix} />
+          <CodeRain isActive={showCodeRain} />
+          <FloatingParticles isActive={isDeveloperMode} particleCount={30} />
+          <MouseTrail isActive={isDeveloperMode} />
+        </>
+      )}
+
+      {/* Terminal Window */}
+      <TerminalWindow 
+        isActive={showTerminal} 
+        onClose={() => {
+          toggleTerminal();
+          // Turn off developer mode when terminal is closed
+          if (isDeveloperMode) {
+            toggleDeveloperMode();
+          }
+        }}
+        onExitDevMode={toggleDeveloperMode}
+      />
+
+      {/* Developer Mode Panel */}
+      <DeveloperModePanel 
+        isOpen={showDevPanel} 
+        onClose={() => setShowDevPanel(false)} 
+      />
+
       {/* Main Content */}
-      <main className="flex-1 pt-16">
-        {children}
+      <main className={`flex-1 pt-16 relative ${isDeveloperMode ? 'scan-lines' : ''}`} style={{ zIndex: 1 }}>
+        <div className={`${isDeveloperMode ? 'bg-black bg-opacity-80' : ''}`}>
+          {children}
+        </div>
       </main>
 
-      {/* Dark Mode Test Component */}
-      <DarkModeTest />
 
 
       {/* Footer */}
@@ -190,12 +272,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="text-center md:text-left mb-4 md:mb-0">
               <p className="text-gray-600 dark:text-gray-400">
-                © 2024 Raymart O. Villena. All rights reserved.
+                © 2018-2025 Raymart O. Villena. All rights reserved.
               </p>
             </div>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/raymartvillena"
+                href="https://github.com/raevillena"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
@@ -206,7 +288,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/raymartvillena"
+                href="https://linkedin.com/in/raymart-villena"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"

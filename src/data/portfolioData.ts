@@ -19,18 +19,17 @@ import type {
 // Personal Information
 export const personalInfo: PersonalInfo = {
   name: "Raymart O. Villena",
-  title: "Senior Research Assistant & Computer Engineer",
-  bio: "CPECB Certified Computer Engineer and Senior Research Assistant at NBERIC Research Directorate, Mariano Marcos State University. Specializing in renewable energy systems, IoT platforms, AI/ML applications, and bioethanol technology. Published researcher with filed patents and extensive conference presentations. Expert in Industry 4.0 technologies, computer vision, and sustainable energy solutions.",
-  profileImage: "/api/placeholder/400/400",
+  title: "Full-Stack Developer - DevOps Engineer - Computer Engineer",
+  bio: "Full-Stack Developer and DevOps Engineer by heart. CPECB Certified Computer Engineer and Senior Researcher at Mariano Marcos State University by profession. Specializing in web development with expertise in React with TypeScript and JavaScript; Express.js with Node.js, and DRF with Python. With experience in IoT systems, AI/ML applications, and DevOps.",
+  profileImage: "/avatar-cropped.svg",
   resumeUrl: "/CV-Raymart Villena - Short Resume.docx",
   contact: {
     email: "rovillena@mmsu.edu.ph",
     phone: "+63912-806-6924",
     location: "Ilocos Norte, Philippines",
     website: "https://raymartvillena.dev",
-    linkedin: "https://linkedin.com/in/raymartvillena",
-    github: "https://github.com/raymartvillena",
-    twitter: "https://twitter.com/raymartvillena"
+    linkedin: "https://www.linkedin.com/in/raymart-villena/",
+    github: "https://github.com/raevillena",
   }
 };
 
@@ -38,22 +37,22 @@ export const personalInfo: PersonalInfo = {
 export const competencies: Competency[] = [
   {
     category: "Full-Stack Development",
-    skills: ["JavaScript", "Node.js", "Express.js", "React", "PHP", "HTML5", "CSS3", "Vite", "TypeScript"],
+    skills: ["JavaScript/TypeScript", "Node.js", "Express.js", "React", "TailwindCSS", "MaterialUI", "CSS3", "Vite", "Redux"],
     icon: "💻"
   },
   {
     category: "Database & Storage",
-    skills: ["MongoDB", "MySQL", "MariaDB", "SQL", "NoSQL", "Database Design", "Data Modeling"],
+    skills: ["MongoDB", "MySQL", "MariaDB", "PostgreSQL", "NoSQL", "Relational Design", "Data Modeling", "ORM", "Persistent Volumes"],
     icon: "🗄️"
   },
   {
     category: "IoT & Embedded Systems",
-    skills: ["ESP32", "MQTT", "Arduino", "C++", "I2C", "DS18B20", "Sensor Integration", "Automation"],
+    skills: ["ESP32 Microcontrollers", "MQTT/HTTP", "Arduino", "Advance DSP algorithms", "Industrial Grade Sensors", "Prototyping Tools", "Sensor Integration", "Automation"],
     icon: "🌐"
   },
   {
     category: "DevOps & Infrastructure",
-    skills: ["Kubernetes", "Docker", "Linux", "Container Orchestration", "CI/CD", "Infrastructure as Code"],
+    skills: ["Kubernetes", "Docker", "Linux", "Container Orchestration", "CI/CD", "Bare-Metal"],
     icon: "⚙️"
   },
   {
@@ -301,6 +300,165 @@ export const skills: Skill[] = [
 
 // Projects
 export const projects: Project[] = [
+  // GitHub Projects (Newest to Oldest)
+  {
+    id: "mayhemcreations-shawn-denis",
+    title: "Mayhem Creation",
+    description: "Collaborative project for MayhemCreations focusing on creative design and development",
+    longDescription: "A collaborative project with MayhemCreations, focusing on creative design and development. This project demonstrates teamwork, creative development, and integration of various web technologies for content management and presentation.",
+    technologies: ["React", "Node.js", "Content Management", "Collaborative Development", "Creative Design"],
+    features: [
+      "Content management system",
+      "Collaborative development workflow",
+      "Creative design implementation",
+      "User engagement features",
+      "Responsive content delivery",
+      "Team collaboration tools"
+    ],
+    status: "in-progress",
+    githubUrl: "https://github.com/tayawaaean/mayhemcreations-shawn-denis",
+    liveUrl: "https://mayhemcreations.com/shawn-denis",
+    images: [
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600"
+    ]
+  },
+  {
+    id: "arec-gis",
+    title: "AREC GIS",
+    description: "Geographic Information System for Agricultural Research and Extension Center",
+    longDescription: "A comprehensive Geographic Information System (GIS) application for the Agricultural Research and Extension Center (AREC). Features interactive maps, spatial data analysis, and agricultural monitoring capabilities for research and extension activities.",
+    technologies: ["React", "Leaflet", "Mapbox", "GIS", "Spatial Data", "Agricultural Technology"],
+    features: [
+      "Interactive mapping interface",
+      "Spatial data visualization",
+      "Agricultural monitoring tools",
+      "Research data integration",
+      "Extension service mapping",
+      "Real-time data updates"
+    ],
+    status: "in-progress",
+    githubUrl: "https://github.com/arecmmsu/arecgis",
+    liveUrl: "https://arecgis.mmsu.edu.ph",
+    images: [
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600"
+    ]
+  },
+  {
+    id: "adminer-node",
+    title: "Adminer Node",
+    description: "Node.js wrapper for Adminer database management tool",
+    longDescription: "A Node.js wrapper and customization of Adminer, providing enhanced database management capabilities. Features custom authentication, improved UI, and additional functionality for database administration and management.",
+    technologies: ["Node.js", "Express", "Adminer", "Database Management", "Authentication", "Custom UI"],
+    features: [
+      "Database management interface",
+      "Custom authentication system",
+      "Enhanced UI/UX design",
+      "Multi-database support",
+      "Query builder and executor",
+      "Database schema visualization"
+    ],
+    status: "completed",
+    githubUrl: "https://github.com/raevillena/adminer_node",
+    liveUrl: "https://adminer.raevillena.dev",
+    images: [
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600"
+    ]
+  },
+  {
+    id: "umans-frontend",
+    title: "UMANS Frontend",
+    description: "Frontend application for University Management and Administration System",
+    longDescription: "The frontend application for the University Management and Administration System (UMANS). Built with React and Material-UI, providing a comprehensive interface for managing university operations, student records, and administrative tasks.",
+    technologies: ["React", "TypeScript", "Material-UI", "React Query", "React Router", "Formik"],
+    features: [
+      "Student management interface",
+      "Faculty administration panel",
+      "Academic records management",
+      "Real-time data synchronization",
+      "Role-based access control",
+      "Responsive design"
+    ],
+    status: "completed",
+    githubUrl: "https://github.com/raevillena/umans-frontend",
+    liveUrl: "https://umans.mmsu.edu.ph"
+  },
+  {
+    id: "umans-backend",
+    title: "UMANS Backend",
+    description: "Backend API for University Management and Administration System",
+    longDescription: "A robust backend API system for university management and administration. Built with Node.js and Express, providing comprehensive APIs for student management, academic records, and administrative functions.",
+    technologies: ["Node.js", "Express", "Sequelize", "PostgreSQL", "JWT", "REST API"],
+    features: [
+      "RESTful API design",
+      "Database management with Sequelize ORM",
+      "JWT authentication and authorization",
+      "Student and faculty management",
+      "Academic records system",
+      "Comprehensive error handling"
+    ],
+    status: "completed",
+    githubUrl: "https://github.com/raevillena/umans",
+    liveUrl: "https://api.umans.mmsu.edu.ph"
+  },
+  {
+    id: "vrms-frontend",
+    title: "VRMS Frontend",
+    description: "Frontend application for Virtual Research Management System",
+    longDescription: "The frontend component of the Virtual Research Management System (VRMS), built with modern React technologies. Provides an intuitive interface for researchers to manage projects, collaborate, and track research progress.",
+    technologies: ["React", "TypeScript", "Material-UI", "Axios", "React Router", "State Management"],
+    features: [
+      "Research project management",
+      "User authentication and authorization",
+      "Collaborative workspace",
+      "Document management system",
+      "Progress tracking dashboard",
+      "Responsive design"
+    ],
+    status: "completed",
+    githubUrl: "https://github.com/raevillena/vrms_frontend",
+    liveUrl: "https://vrms.mmsu.edu.ph"
+  },
+  {
+    id: "energymon",
+    title: "Energymon",
+    description: "Energy monitoring system for tracking power consumption and efficiency",
+    longDescription: "An IoT-based energy monitoring system designed to track power consumption, analyze energy efficiency, and provide insights for optimizing energy usage. Features real-time monitoring, data logging, and comprehensive analytics.",
+    technologies: ["IoT", "Node.js", "Express", "Database", "Real-time Monitoring", "Energy Analytics"],
+    features: [
+      "Real-time energy monitoring",
+      "Power consumption tracking",
+      "Energy efficiency analytics",
+      "Data logging and storage",
+      "Alert system for anomalies",
+      "Historical data visualization"
+    ],
+    status: "completed",
+    githubUrl: "https://github.com/raevillena/energymon",
+    liveUrl: "https://energymon.raevillena.dev"
+  },
+  {
+    id: "dashboard",
+    title: "Dashboard",
+    description: "A comprehensive dashboard application for data visualization and monitoring",
+    longDescription: "A modern dashboard application built with React and modern web technologies. Features real-time data visualization, interactive charts, and responsive design for monitoring various metrics and KPIs.",
+    technologies: ["React", "TypeScript", "Vite", "Material-UI", "Chart.js", "Responsive Design"],
+    features: [
+      "Real-time data visualization",
+      "Interactive charts and graphs",
+      "Responsive dashboard layout",
+      "Modern UI/UX design",
+      "Data filtering and sorting",
+      "Export functionality"
+    ],
+    status: "completed",
+    githubUrl: "https://github.com/raevillena/dashboard",
+    liveUrl: "https://raevillena.github.io/dashboard"
+  },
   {
     id: "zero-fossil-fuel-bioethanol-distiller",
     title: "Zero-Fossil Fuel Bioethanol Distiller",
@@ -468,12 +626,12 @@ export const projects: Project[] = [
 // Education
 export const education: Education[] = [
   {
-    degree: "Master of Science",
+    degree: "Master of Science in Computer Engineering",
     institution: "Mapua University",
     field: "Computer Engineering (MS-CPE)",
-    period: "2020-2024",
+    period: "2020-2025",
     status: "completed",
-    gpa: "27/30 units completed",
+    gpa: "Graduated",
     relevantCoursework: [
       "Thesis: Classification of Black Garlic Grade Using Convolutional Neural Network",
       "Published in ACM Digital Library (doi: 10.1145/3731806.3731823)",
@@ -493,22 +651,6 @@ export const education: Education[] = [
       "ID number: 2001151205940601"
     ]
   },
-  {
-    degree: "High School Diploma",
-    institution: "Batac National High School",
-    field: "General Education",
-    period: "2006-2010",
-    status: "completed",
-    gpa: "Graduated"
-  },
-  {
-    degree: "Elementary Diploma",
-    institution: "Tabug Elementary School",
-    field: "Primary Education",
-    period: "2000-2006",
-    status: "completed",
-    gpa: "Graduated"
-  }
 ];
 
 // Work Experience
@@ -526,7 +668,7 @@ export const workExperience: WorkExperience[] = [
       "Served as speaker at ICPEP.SE Seminar on Smart AI and Sustainability (March 2025)",
       "Served as evaluator for MMSU Research In-House Proposal Review 2025",
       "Led 8+ major research projects including bioethanol production, data analytics, and renewable energy",
-      "Completed MS-CPE with 27/30 units, specializing in AI/ML applications",
+      "Completed MS-CPE, specializing in AI/ML applications",
       "Co-authored 2nd Place Paper at 7th RAFEN 1 Symposium (2021)",
       "Developed Virtual Research Management System for MMSU (Completed 2022)"
     ],
@@ -575,7 +717,7 @@ export const certifications: Certification[] = [
     issuer: "Computer Engineers Certification Board",
     date: "2015-01-01",
     credentialId: "00223",
-    credentialUrl: "https://cpeb.gov.ph"
+    credentialUrl: "https://cpecb.org.ph"
   }
 ];
 
@@ -706,18 +848,13 @@ export const memberships: Membership[] = [
 export const socialLinks: SocialLink[] = [
   {
     platform: "GitHub",
-    url: "https://github.com/raymartvillena",
+    url: "https://github.com/raevillena",
     icon: "github"
   },
   {
     platform: "LinkedIn",
-    url: "https://linkedin.com/in/raymartvillena",
+    url: "https://linkedin.com/in/raymart-villena",
     icon: "linkedin"
-  },
-  {
-    platform: "Twitter",
-    url: "https://twitter.com/raymartvillena",
-    icon: "twitter"
   },
   {
     platform: "Website",
@@ -726,7 +863,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     platform: "Email",
-    url: "mailto:rovillena@mmsu.edu.ph",
+    url: "mailto:raymart.o.villena@gmail.com",
     icon: "email"
   }
 ];

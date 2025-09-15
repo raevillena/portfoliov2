@@ -19,8 +19,7 @@ const Profile: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
-        ease: "easeOut"
+        duration: 0.6
       }
     }
   };
@@ -90,8 +89,8 @@ const Profile: React.FC = () => {
                 variants={itemVariants}
                 className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
               >
-                With a <strong className="text-primary-600 dark:text-primary-400">Master's degree in Computer Engineering</strong> 
-                (ongoing) and a <strong className="text-primary-600 dark:text-primary-400">Bachelor's degree</strong> completed with 
+                With a <strong className="text-primary-600 dark:text-primary-400">Master's degree in Computer Engineering </strong> 
+                and a <strong className="text-primary-600 dark:text-primary-400">Bachelor's degree</strong> completed with 
                 Magna Cum Laude honors, I combine academic excellence with practical experience to deliver innovative solutions that 
                 make a meaningful impact in the technology landscape.
               </motion.p>
