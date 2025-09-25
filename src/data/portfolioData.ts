@@ -318,15 +318,11 @@ export const projects: Project[] = [
     status: "in-progress",
     githubUrl: "https://github.com/tayawaaean/mayhemcreations-shawn-denis",
     liveUrl: "https://mayhemcreations.com/shawn-denis",
-    images: [
-      "/api/placeholder/800/600",
-      "/api/placeholder/800/600",
-      "/api/placeholder/800/600"
-    ]
+    images: []
   },
   {
     id: "arec-gis",
-    title: "AREC GIS",
+    title: "ARECGIS",
     description: "Geographic Information System for Agricultural Research and Extension Center",
     longDescription: "A comprehensive Geographic Information System (GIS) application for the Agricultural Research and Extension Center (AREC). Features interactive maps, spatial data analysis, and agricultural monitoring capabilities for research and extension activities.",
     technologies: ["React", "Leaflet", "Mapbox", "GIS", "Spatial Data", "Agricultural Technology"],
@@ -338,12 +334,16 @@ export const projects: Project[] = [
       "Extension service mapping",
       "Real-time data updates"
     ],
-    status: "in-progress",
+    status: "completed",
     githubUrl: "https://github.com/arecmmsu/arecgis",
-    liveUrl: "https://arecgis.mmsu.edu.ph",
+    liveUrl: "https://arec.mmsu.edu.ph",
     images: [
-      "/api/placeholder/800/600",
-      "/api/placeholder/800/600"
+      "/arecgis1.png",
+      "/arecgis2.png",
+      "/arecgis3.png",
+      "/arecgis4.png",
+      "/arecgis5.png",
+      "/arecgis6.png"
     ]
   },
   {
@@ -364,9 +364,12 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/raevillena/adminer_node",
     liveUrl: "https://adminer.raevillena.dev",
     images: [
-      "/api/placeholder/800/600",
-      "/api/placeholder/800/600",
-      "/api/placeholder/800/600"
+      "/adminer1.png",
+      "/adminer.png",
+      "/adminer3.png",
+      "/adminer4.png",
+      "/adminer5.png",
+      "/adminer6.png"
     ]
   },
   {
@@ -385,7 +388,15 @@ export const projects: Project[] = [
     ],
     status: "completed",
     githubUrl: "https://github.com/raevillena/umans-frontend",
-    liveUrl: "https://umans.mmsu.edu.ph"
+    liveUrl: "https://umans.nbericmmsu.com",
+    images: [
+      "/umans1.png",
+      "/umans2.png",
+      "/umans3.png",
+      "/umans4.png",
+      "/umans5.png",
+      "/umans6.png"
+    ]
   },
   {
     id: "umans-backend",
@@ -403,7 +414,10 @@ export const projects: Project[] = [
     ],
     status: "completed",
     githubUrl: "https://github.com/raevillena/umans",
-    liveUrl: "https://api.umans.mmsu.edu.ph"
+    liveUrl: "https://umans-api.nbericmmsu.com",
+    images: [
+      "/umans-back.png"
+    ]
   },
   {
     id: "vrms-frontend",
@@ -438,12 +452,11 @@ export const projects: Project[] = [
       "Historical data visualization"
     ],
     status: "completed",
-    githubUrl: "https://github.com/raevillena/energymon",
-    liveUrl: "https://energymon.raevillena.dev"
+    isPrivate: true
   },
   {
     id: "dashboard",
-    title: "Dashboard",
+    title: "Distiller IoT Remote Control Dashboard",
     description: "A comprehensive dashboard application for data visualization and monitoring",
     longDescription: "A modern dashboard application built with React and modern web technologies. Features real-time data visualization, interactive charts, and responsive design for monitoring various metrics and KPIs.",
     technologies: ["React", "TypeScript", "Vite", "Material-UI", "Chart.js", "Responsive Design"],
@@ -457,98 +470,17 @@ export const projects: Project[] = [
     ],
     status: "completed",
     githubUrl: "https://github.com/raevillena/dashboard",
-    liveUrl: "https://raevillena.github.io/dashboard"
+    liveUrl: "https://raevillena.github.io/dashboard",
+    images: [
+      "/dashboard3.png",
+      "/dashboard1.png",
+      "/dashboard2.png",
+      "/dashboard4.png",
+      "/dashboard5.png",
+      "/dashboard6.png"
+    ]
   },
-  {
-    id: "zero-fossil-fuel-bioethanol-distiller",
-    title: "Zero-Fossil Fuel Bioethanol Distiller",
-    description: "Design and evaluation of a zero-fossil fuel distiller for bioethanol production",
-    longDescription: "Co-authored research on designing and evaluating a zero-fossil fuel distiller for bioethanol production. Published in IOP Conference Series: Earth and Environmental Science. This project focuses on sustainable energy solutions and renewable technology for bioethanol production.",
-    technologies: ["Renewable Energy", "Bioethanol Production", "Sustainable Technology", "Research", "IOP Publishing"],
-    features: [
-      "Zero-fossil fuel operation",
-      "Sustainable bioethanol production",
-      "Published research paper",
-      "Environmental impact assessment",
-      "Energy efficiency optimization",
-      "Renewable energy integration"
-    ],
-    status: "completed",
-    githubUrl: "https://github.com/raymartvillena/bioethanol-distiller",
-    liveUrl: "https://doi.org/10.1088/1755-1315/749/1/012043"
-  },
-  {
-    id: "remote-monitoring-control-system",
-    title: "Remote Monitoring & Control System",
-    description: "Remote monitoring and control system for energy self-sufficient bioethanol distiller",
-    longDescription: "Co-authored research on developing a remote monitoring and control system for energy self-sufficient bioethanol distiller. Published in IOP Conference Series: Earth and Environmental Science. Features IoT integration, real-time monitoring, and automated control systems.",
-    technologies: ["IoT", "Remote Monitoring", "Control Systems", "Energy Management", "Real-time Data"],
-    features: [
-      "Real-time remote monitoring",
-      "Automated control systems",
-      "IoT sensor integration",
-      "Energy self-sufficiency",
-      "Data logging and analysis",
-      "Published research paper"
-    ],
-    status: "completed",
-    githubUrl: "https://github.com/raymartvillena/remote-monitoring",
-    liveUrl: "https://doi.org/10.1088/1755-1315/749/1/012034"
-  },
-  {
-    id: "black-garlic-classification",
-    title: "Black Garlic Grade Classification",
-    description: "Classification of Black Garlic Grade Using Convolutional Neural Network",
-    longDescription: "MS Thesis research on using Convolutional Neural Networks for classifying black garlic grades. This computer vision application demonstrates practical AI/ML implementation in agricultural quality assessment. Published in ACM Digital Library.",
-    technologies: ["Python", "Convolutional Neural Networks", "Computer Vision", "TensorFlow", "PyTorch", "Image Classification"],
-    features: [
-      "CNN-based image classification",
-      "Agricultural quality assessment",
-      "Published in ACM Digital Library",
-      "Computer vision implementation",
-      "Machine learning algorithms",
-      "Quality control automation"
-    ],
-    status: "completed",
-    githubUrl: "https://github.com/raymartvillena/black-garlic-classification",
-    liveUrl: "https://doi.org/10.1145/3731806.3731823"
-  },
-  {
-    id: "mmsu-industry-4-iot-platform",
-    title: "MMSU Industry 4.0 IoT Platform",
-    description: "Development of a Cloud Server for Internet of Things",
-    longDescription: "Led the development of MMSU Industry 4.0 IoT Platform, creating a comprehensive cloud server infrastructure for Internet of Things applications. This project supports various IoT devices and provides scalable cloud services for research and educational purposes.",
-    technologies: ["Cloud Computing", "IoT", "Server Development", "Industry 4.0", "Scalable Architecture"],
-    features: [
-      "Cloud server infrastructure",
-      "IoT device integration",
-      "Scalable architecture",
-      "Industry 4.0 compliance",
-      "Research and educational support",
-      "Multi-device compatibility"
-    ],
-    status: "completed",
-    githubUrl: "https://github.com/raymartvillena/mmsu-iot-platform",
-    liveUrl: "https://iot.mmsu.edu.ph"
-  },
-  {
-    id: "3-stage-gac-deodorizing-unit",
-    title: "3-Stage GAC Deodorizing Unit",
-    description: "Filed Patent Application for Malodorous Ethanol Treatment System",
-    longDescription: "Developed and filed patent application for a 3-Stage Granular Activated Carbon (GAC) Deodorizing Unit specifically designed for treating malodorous ethanol. This innovative system addresses odor issues in bioethanol production processes.",
-    technologies: ["Patent Development", "GAC Technology", "Ethanol Treatment", "Odor Control", "Bioethanol Production"],
-    features: [
-      "3-stage GAC treatment process",
-      "Malodorous ethanol treatment",
-      "Patent application filed",
-      "Odor control technology",
-      "Bioethanol production optimization",
-      "Innovative design solution"
-    ],
-    status: "completed",
-    githubUrl: "https://github.com/raymartvillena/gac-deodorizing",
-    liveUrl: "https://patents.mmsu.edu.ph/gac-deodorizing"
-  },
+
   {
     id: "multi-protocol-platform-industry-4",
     title: "Multi-Protocol Platform for Industry 4.0",
@@ -563,9 +495,8 @@ export const projects: Project[] = [
       "Patent application filed",
       "Seamless protocol switching"
     ],
-    status: "completed",
-    githubUrl: "https://github.com/raymartvillena/industry4-platform",
-    liveUrl: "https://patents.mmsu.edu.ph/industry4-platform"
+    status: "in-progress",
+    isPrivate: true
   },
   {
     id: "virtual-research-management-system",
@@ -582,8 +513,7 @@ export const projects: Project[] = [
       "Academic institution support"
     ],
     status: "completed",
-    githubUrl: "https://github.com/raymartvillena/virtual-research-system",
-    liveUrl: "https://research.mmsu.edu.ph"
+    isPrivate: true
   },
   {
     id: "rooftop-solar-panel-detection",
@@ -599,9 +529,8 @@ export const projects: Project[] = [
       "Automated detection system",
       "Provincial monitoring support"
     ],
-    status: "completed",
-    githubUrl: "https://github.com/raymartvillena/solar-detection",
-    liveUrl: "https://research.mmsu.edu.ph/solar-detection"
+    status: "in-progress",
+    isPrivate: true
   },
   {
     id: "iot-integrated-mini-pervaporation-distiller",
@@ -617,9 +546,8 @@ export const projects: Project[] = [
       "Bioethanol production optimization",
       "Advanced distillation methods"
     ],
-    status: "completed",
-    githubUrl: "https://github.com/raymartvillena/pervaporation-distiller",
-    liveUrl: "https://research.mmsu.edu.ph/pervaporation-distiller"
+    status: "in-progress",
+    isPrivate: true
   }
 ];
 

@@ -7,19 +7,20 @@ const Profile: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.1
+        delayChildren: 0.1,
+        staggerChildren: 0.05
       }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6
+        duration: 0.3,
+        ease: "easeOut"
       }
     }
   };
@@ -31,7 +32,7 @@ const Profile: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="max-w-4xl mx-auto"
         >
           {/* Section Header */}

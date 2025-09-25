@@ -35,6 +35,7 @@ export interface Project {
   imageUrl?: string;
   images?: string[];
   status: 'completed' | 'in-progress' | 'planned';
+  isPrivate?: boolean;
 }
 
 export interface Education {

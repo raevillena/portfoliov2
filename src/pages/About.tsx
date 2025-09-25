@@ -13,8 +13,8 @@ const About: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.1
+        delayChildren: 0.1,
+        staggerChildren: 0.05
       }
     }
   };
@@ -25,7 +25,7 @@ const About: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.3,
         ease: "easeOut"
       }
     }
@@ -55,7 +55,7 @@ const About: React.FC = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="max-w-6xl mx-auto"
           >
             <motion.div variants={itemVariants} className="text-center mb-12">
@@ -104,7 +104,7 @@ const About: React.FC = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="max-w-6xl mx-auto"
           >
             <motion.div variants={itemVariants} className="text-center mb-12">
@@ -176,7 +176,7 @@ const About: React.FC = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="max-w-6xl mx-auto"
           >
             <motion.div variants={itemVariants} className="text-center mb-12">
