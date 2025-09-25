@@ -40,8 +40,8 @@ const ProjectsPreview: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.2
+        delayChildren: 0.05,
+        staggerChildren: 0.03
       }
     }
   };

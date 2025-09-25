@@ -8,8 +8,8 @@ const Skills: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.1
+        delayChildren: 0.05,
+        staggerChildren: 0.03
       }
     }
   };
@@ -20,8 +20,7 @@ const Skills: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,
-        ease: "easeOut"
+        duration: 0.5
       }
     }
   };
@@ -32,8 +31,7 @@ const Skills: React.FC = () => {
       scale: 1,
       opacity: 1,
       transition: {
-        duration: 0.3,
-        ease: "easeOut"
+        duration: 0.3
       }
     },
     hover: {

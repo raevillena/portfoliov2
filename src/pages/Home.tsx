@@ -1,6 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import Hero from '../components/sections/Hero';
 import ProjectsPreview from '../components/sections/ProjectsPreview';
 import Competencies from '../components/sections/Competencies';

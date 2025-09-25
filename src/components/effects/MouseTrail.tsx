@@ -13,7 +13,7 @@ interface TrailPoint {
 
 const MouseTrail: React.FC<MouseTrailProps> = ({ isActive }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const [trailPoints, setTrailPoints] = useState<TrailPoint[]>([]);
   const pointIdRef = useRef(0);
 

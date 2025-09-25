@@ -24,10 +24,8 @@ export const personalInfo: PersonalInfo = {
   profileImage: "/avatar-cropped.svg",
   resumeUrl: "/CV-Raymart Villena - Short Resume.docx",
   contact: {
-    email: "rovillena@mmsu.edu.ph",
-    phone: "+63912-806-6924",
+    email: "raymart.o.villena@gmail.com",
     location: "Ilocos Norte, Philippines",
-    website: "https://raymartvillena.dev",
     linkedin: "https://www.linkedin.com/in/raymart-villena/",
     github: "https://github.com/raevillena",
   }
@@ -783,11 +781,6 @@ export const socialLinks: SocialLink[] = [
     platform: "LinkedIn",
     url: "https://linkedin.com/in/raymart-villena",
     icon: "linkedin"
-  },
-  {
-    platform: "Website",
-    url: "https://raymartvillena.dev",
-    icon: "globe"
   },
   {
     platform: "Email",

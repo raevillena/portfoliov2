@@ -9,8 +9,8 @@ const ContactPreview: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.1
+        delayChildren: 0.05,
+        staggerChildren: 0.03
       }
     }
   };
@@ -21,8 +21,7 @@ const ContactPreview: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
-        ease: "easeOut"
+        duration: 0.6
       }
     }
   };
@@ -33,15 +32,13 @@ const ContactPreview: React.FC = () => {
       scale: 1,
       opacity: 1,
       transition: {
-        duration: 0.5,
-        ease: "easeOut"
+        duration: 0.5
       }
     },
     hover: {
       scale: 1.05,
       transition: {
-        duration: 0.2,
-        ease: "easeOut"
+        duration: 0.2
       }
     }
   };
@@ -68,7 +65,7 @@ const ContactPreview: React.FC = () => {
           </motion.div>
 
           {/* Contact Information Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             {/* Email */}
             <motion.div
               variants={cardVariants}
@@ -80,42 +77,25 @@ const ContactPreview: React.FC = () => {
               </div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Email</h3>
               <a
-                href={`mailto:${personalInfo.email}`}
+                href={`mailto:${personalInfo.contact.email}`}
                 className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors break-all"
               >
-                {personalInfo.email}
+                {personalInfo.contact.email}
               </a>
             </motion.div>
 
-            {/* Phone */}
+
+            {/* Location */}
             <motion.div
               variants={cardVariants}
               whileHover="hover"
               className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 text-center"
             >
               <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-secondary-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                📱
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Phone</h3>
-              <a
-                href={`tel:${personalInfo.phone}`}
-                className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
-              >
-                {personalInfo.phone}
-              </a>
-            </motion.div>
-
-            {/* Location */}
-            <motion.div
-              variants={cardVariants}
-              whileHover="hover"
-              className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 text-center md:col-span-2 lg:col-span-1"
-            >
-              <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-secondary-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 📍
               </div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Location</h3>
-              <p className="text-gray-600 dark:text-gray-400">{personalInfo.location}</p>
+              <p className="text-gray-600 dark:text-gray-400">{personalInfo.contact.location}</p>
             </motion.div>
           </div>
 
@@ -176,7 +156,7 @@ const ContactPreview: React.FC = () => {
             </Link>
 
             <a
-              href={`mailto:${personalInfo.email}`}
+              href={`mailto:${personalInfo.contact.email}`}
               className="inline-flex items-center px-8 py-4 border-2 border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 font-semibold rounded-full hover:bg-primary-600 dark:hover:bg-primary-400 hover:text-white dark:hover:text-white transition-all duration-300"
             >
               <span>Email Directly</span>

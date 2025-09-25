@@ -8,8 +8,8 @@ const Research: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.1,
-        staggerChildren: 0.05
+        delayChildren: 0.05,
+        staggerChildren: 0.02
       }
     }
   };
@@ -20,8 +20,7 @@ const Research: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.3,
-        ease: "easeOut"
+        duration: 0.3
       }
     }
   };
@@ -32,15 +31,13 @@ const Research: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.3,
-        ease: "easeOut"
+        duration: 0.3
       }
     },
     hover: {
       y: -5,
       transition: {
-        duration: 0.2,
-        ease: "easeOut"
+        duration: 0.2
       }
     }
   };
@@ -177,7 +174,7 @@ const Research: React.FC = () => {
                       Technologies Used:
                     </h5>
                     <div className="flex flex-wrap gap-2">
-                      {research.technologies.map((tech, techIndex) => (
+                      {research.technologies.map((tech) => (
                         <span
                           key={tech}
                           className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-full hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"

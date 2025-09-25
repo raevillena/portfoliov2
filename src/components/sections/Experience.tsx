@@ -8,8 +8,8 @@ const Experience: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.1,
-        staggerChildren: 0.1
+        delayChildren: 0.05,
+        staggerChildren: 0.03
       }
     }
   };
@@ -20,8 +20,7 @@ const Experience: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.3,
-        ease: "easeOut"
+        duration: 0.3
       }
     }
   };
@@ -32,15 +31,13 @@ const Experience: React.FC = () => {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.3,
-        ease: "easeOut"
+        duration: 0.3
       }
     },
     hover: {
       x: 5,
       transition: {
-        duration: 0.2,
-        ease: "easeOut"
+        duration: 0.2
       }
     }
   };

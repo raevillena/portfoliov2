@@ -177,7 +177,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Raymart O. Villena**
 - Software Engineer | IoT & Full-Stack Developer | Researcher
-- Email: rovillena@mmsu.edu.ph
+- Email: raymart.o.villena@gmail.com
 - LinkedIn: [raymartvillena](https://linkedin.com/in/raymartvillena)
 - GitHub: [raymartvillena](https://github.com/raymartvillena)
 

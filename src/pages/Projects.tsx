@@ -43,8 +43,8 @@ const Projects: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.1
+        delayChildren: 0.05,
+        staggerChildren: 0.03
       }
     }
   };
@@ -129,7 +129,7 @@ const Projects: React.FC = () => {
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <motion.div
                 key={project.id}
                 variants={cardVariants}

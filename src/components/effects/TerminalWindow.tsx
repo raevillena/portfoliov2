@@ -52,7 +52,7 @@ const TerminalWindow: React.FC<TerminalWindowProps> = ({ isActive, onClose, onEx
       'Mobile App - React Native cross-platform app'
     ],
     contact: [
-      'Email: rovillena@mmsu.edu.ph',
+      'Email: raymart.o.villena@gmail.com',
       'GitHub: github.com/raevillena',
       'LinkedIn: linkedin.com/in/raymart-villena',
       'Location: Ilocos Norte, Philippines'

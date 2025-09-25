@@ -8,8 +8,8 @@ const Competencies: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.1
+        delayChildren: 0.05,
+        staggerChildren: 0.03
       }
     }
   };
@@ -20,8 +20,7 @@ const Competencies: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
-        ease: "easeOut"
+        duration: 0.6
       }
     }
   };
@@ -32,15 +31,13 @@ const Competencies: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,
-        ease: "easeOut"
+        duration: 0.5
       }
     },
     hover: {
       y: -5,
       transition: {
-        duration: 0.2,
-        ease: "easeOut"
+        duration: 0.2
       }
     }
   };
@@ -68,7 +65,7 @@ const Competencies: React.FC = () => {
 
           {/* Competencies Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {competencies.map((competency, index) => (
+            {competencies.map((competency) => (
               <motion.div
                 key={competency.category}
                 variants={cardVariants}

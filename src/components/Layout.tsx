@@ -299,7 +299,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </svg>
               </a>
               <a
-                href="mailto:rovillena@mmsu.edu.ph"
+                href="mailto:raymart.o.villena@gmail.com"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 <span className="sr-only">Email</span>

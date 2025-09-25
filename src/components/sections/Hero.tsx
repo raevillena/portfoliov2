@@ -14,8 +14,8 @@ const Hero: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.1,
-        staggerChildren: 0.1
+        delayChildren: 0.05,
+        staggerChildren: 0.03
       }
     }
   };
@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
       opacity: 1,
       transition: {
         duration: 0.3,
-        delay: 0.4
+        delay: 0.2
       }
     },
     hover: {

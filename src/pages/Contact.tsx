@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import emailjs from '@emailjs/browser';
 import { personalInfo, socialLinks } from '../data/portfolioData';
 import type { ContactForm } from '../types/index';
 
@@ -19,8 +18,8 @@ const Contact: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.1
+        delayChildren: 0.05,
+        staggerChildren: 0.03
       }
     }
   };
@@ -31,8 +30,7 @@ const Contact: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
-        ease: "easeOut"
+        duration: 0.6
       }
     }
   };
@@ -43,15 +41,13 @@ const Contact: React.FC = () => {
       scale: 1,
       opacity: 1,
       transition: {
-        duration: 0.5,
-        ease: "easeOut"
+        duration: 0.5
       }
     },
     hover: {
       scale: 1.05,
       transition: {
-        duration: 0.2,
-        ease: "easeOut"
+        duration: 0.2
       }
     }
   };
@@ -139,36 +135,15 @@ const Contact: React.FC = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Email</h3>
                       <a
-                        href={`mailto:${personalInfo.email}`}
+                        href={`mailto:${personalInfo.contact.email}`}
                         className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
                       >
-                        {personalInfo.email}
+                        {personalInfo.contact.email}
                       </a>
                     </div>
                   </div>
                 </motion.div>
 
-                {/* Phone */}
-                <motion.div
-                  variants={cardVariants}
-                  whileHover="hover"
-                  className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
-                >
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-600 rounded-lg flex items-center justify-center text-white text-xl mr-4 group-hover:scale-110 transition-transform duration-300">
-                      📱
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Phone</h3>
-                      <a
-                        href={`tel:${personalInfo.phone}`}
-                        className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
-                      >
-                        {personalInfo.phone}
-                      </a>
-                    </div>
-                  </div>
-                </motion.div>
 
                 {/* Location */}
                 <motion.div
@@ -182,7 +157,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Location</h3>
-                      <p className="text-gray-600 dark:text-gray-400">{personalInfo.location}</p>
+                      <p className="text-gray-600 dark:text-gray-400">{personalInfo.contact.location}</p>
                     </div>
                   </div>
                 </motion.div>
